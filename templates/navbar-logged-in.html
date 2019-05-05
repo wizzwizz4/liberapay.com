@@ -1,34 +1,34 @@
 % from 'templates/avatar-url.html' import avatar_img with context
 
-<li class="dropdown dropdown-hover">
-<button class="dropdown-toggle navbar-btn" type="button"
+<li class="nav-item dropdown dropdown-hover">
+<button class="dropdown-toggle nav-link" type="button"
         data-toggle="dropdown">
     {{ avatar_img(user, size=28) }}
     <span class="caret"></span>
 </button>
 <ul class="dropdown-menu dropdown-menu-right" role="menu">
-    <li><a href="/{{ user.username }}/">{{ _("Profile") }}</a></li>
-    <li><a href="/{{ user.username }}/giving/">{{ _("Giving") }}</a></li>
-    <li><a href="/{{ user.username }}/receiving/">{{ _("Receiving") }}</a></li>
-    <li><a href="/{{ user.username }}/ledger/">{{ _("Ledger") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/">{{ _("Profile") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/giving/">{{ _("Giving") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/receiving/">{{ _("Receiving") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/ledger/">{{ _("Ledger") }}</a></li>
     % if user.mangopay_user_id
-    <li><a href="/{{ user.username }}/wallet/">{{ _("Wallet") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/wallet/">{{ _("Wallet") }}</a></li>
     % if user.balance
-    <li class="level2"><a href="/{{ user.username }}/wallet/empty">{{ _("Emptying your wallet") }}</a></li>
-    <li class="level2"><a href="/{{ user.username }}/wallet/payout">{{ _("Withdraw money") }}</a></li>
+    <li class="nav-item level2"><a href="/{{ user.username }}/wallet/empty">{{ _("Emptying your wallet") }}</a></li>
+    <li class="nav-item level2"><a href="/{{ user.username }}/wallet/payout">{{ _("Withdraw money") }}</a></li>
     % endif
     % endif
-    <li><a href="/{{ user.username }}/payment/">{{ _("Payment Processors") }}</a></li>
-    <li><a href="/{{ user.username }}/identity">{{ _("Identity") }}</a></li>
-    <li><a href="/{{ user.username }}/settings/">{{ _("Account") }}</a></li>
-    <li><a href="/{{ user.username }}/emails/">{{ _("Emails") }}</a></li>
-    <li><a href="/{{ user.username }}/notifications">{{ _("Notifications") }}</a></li>
-    <li><a href="/{{ user.username }}/widgets/">{{ _("Widgets") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/payment/">{{ _("Payment Processors") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/identity">{{ _("Identity") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/settings/">{{ _("Account") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/emails/">{{ _("Emails") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/notifications">{{ _("Notifications") }}</a></li>
+    <li class="nav-item"><a href="/{{ user.username }}/widgets/">{{ _("Widgets") }}</a></li>
     <li class="divider"></li>
-    <li><a href="/for/new">{{ _("Create a new community") }}</a></li>
-    <li><a href="/about/teams">{{ _("Create a new team") }}</a></li>
+    <li class="nav-item"><a href="/for/new">{{ _("Create a new community") }}</a></li>
+    <li class="nav-item"><a href="/about/teams">{{ _("Create a new team") }}</a></li>
     <li class="divider"></li>
-    <li>{% include "templates/sign-out.html" %}</li>
+    <li class="nav-item">{% include "templates/sign-out.html" %}</li>
 </ul>
 </li>
 
