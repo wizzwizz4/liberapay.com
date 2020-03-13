@@ -5,10 +5,8 @@ matrix:
       env: TOXENV=py36
     - python: 3.7
       env: TOXENV=py37
-      dist: xenial
-      sudo: true
 addons:
-  postgresql: 9.6
+  postgresql: 11
 branches:
   only:
     - master
@@ -36,6 +34,6 @@ notifications:
       - "%{repository} (%{branch}:%{commit} by %{author}): %{message} (%{build_url})"
     skip_join: true
 sudo: false
-dist: trusty
+dist: bionic
 git:
   strategy: tarball
